@@ -5,7 +5,7 @@ import Head from 'next/head';
 const Post = props => (
   <Layout>
     <Head>
-      <title>My Batman</title>
+      <title>{props.show.name}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <h1>{props.show.name}</h1>
