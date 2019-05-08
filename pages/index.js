@@ -5,7 +5,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
 const DynamicComponentWithCustomLoading = dynamic(
-  () => import('./hello'),
+  () => import('../components/hello'),
   { loading: () => <p>...</p> }
 );
 
