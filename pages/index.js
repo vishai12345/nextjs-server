@@ -2,6 +2,12 @@ import Layout from '../components/Layout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const DynamicComponentWithCustomLoading = dynamic(
+  () => import('./hello'),
+  { loading: () => <p>...</p> }
+);
 
 const Index = (props) => (
   <Layout>
@@ -9,6 +15,7 @@ const Index = (props) => (
       <title>My Batman</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
+    <DynamicComponentWithCustomLoading />
     <h1>Batman TV Shows</h1>
     <ul>
       {props.shows.map(show => (
